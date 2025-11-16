@@ -418,3 +418,12 @@ document.addEventListener("DOMContentLoaded", () => {
      End of DOMContentLoaded
      ------------------------- */
 });
+function openSettings() {
+  document.body.classList.add('modal-open');
+  document.querySelector('.settings-popup').classList.remove('hidden');
+}
+
+function closeSettings() {
+  document.body.classList.remove('modal-open');
+  document.querySelector('.settings-popup').classList.add('hidden');
+}
