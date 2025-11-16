@@ -96,3 +96,51 @@ body{
   #questionText{font-size:16px}
   .option{padding:12px;font-size:15px}
 }
+/* Popup Background Blur Fix */
+.settings-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  max-width: 350px;
+  background: rgba(0, 0, 0, 0.85);
+  border: 2px solid #0f0;
+  padding: 18px;
+  border-radius: 10px;
+  z-index: 9999;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 20px #00ff00aa;
+}
+
+/* Text Fix */
+.settings-popup h2 {
+  margin-bottom: 12px;
+  color: #0f0;
+  font-size: 20px;
+  text-shadow: 0 0 8px #00ff00;
+}
+
+/* Checkboxes better spacing */
+.settings-popup label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+/* Close Button */
+.settings-close {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  font-size: 22px;
+  color: #0f0;
+  cursor: pointer;
+}
+
+/* Disable background scrolling */
+body.modal-open {
+  overflow: hidden;
+}
