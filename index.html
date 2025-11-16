@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Black Force 007 — Cyber Quiz</title>
+  <meta name="description" content="Black Force 007 — Cyber Quiz | Mobile-first neon hacker quiz game. Play, level up, unlock ranks & share score." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">BF<span>007</span></div>
+        <div class="title">Black Force <small>Cyber Quiz</small></div>
+      </div>
+      <div class="controls-top">
+        <button id="openLeaderboard" class="iconBtn">🏆</button>
+        <button id="settingsBtn" class="iconBtn">⚙️</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Intro -->
+      <section id="intro" class="panel">
+        <h1>Mission Brief</h1>
+        <p class="muted">Agent, তোমাকে ৫টি প্রশ্নে পরীক্ষায় উত্তীর্ণ হতে হবে। প্রতিটি সঠিক উত্তরে XP এবং Rank বাড়বে।</p>
+        <div class="metaRow">
+          <div>Level: <strong id="playerLevel">1</strong></div>
+          <div>XP: <strong id="playerXP">0</strong></div>
+        </div>
+        <div class="btnRow">
+          <button id="startBtn" class="primary">Start Mission</button>
+          <button id="practiceBtn" class="secondary">Practice Mode</button>
+        </div>
+        <p class="muted small">Offline & Mobile friendly. কোনো external audio ফাইল নেই (WebAudio used).</p>
+      </section>
+
+      <!-- Quiz -->
+      <section id="quiz" class="panel hidden">
+        <div class="quizHead">
+          <div class="left">
+            <div class="meta">Q <span id="qNumber">0</span>/<span id="qTotal">0</span></div>
+            <div id="progressBar" class="progress"><div id="progressFill"></div></div>
+          </div>
+          <div class="right">
+            <div id="timer" class="timer">⏱️ <span id="time">20</span>s</div>
+            <div class="score">Score: <span id="score">0</span></div>
+          </div>
+        </div>
+
+        <h2 id="questionText">Question text</h2>
+        <div id="options" class="options"></div>
+
+        <div class="actions">
+          <button id="hintBtn" class="secondary">Hint</button>
+          <button id="nextBtn" class="primary" disabled>Next</button>
+        </div>
+      </section>
+
+      <!-- Result -->
+      <section id="result" class="panel hidden">
+        <h1>Mission Result</h1>
+        <p id="scoreText">You scored X</p>
+        <div class="resultRow">
+          <button id="retryBtn" class="primary">Retry Mission</button>
+          <button id="shareBtn" class="secondary">Share Score</button>
+        </div>
+        <p class="muted small">Rank: <strong id="rankName">Cadet</strong> · Next rank at <span id="nextRankXP">10</span> XP</p>
+      </section>
+
+      <!-- Leaderboard modal -->
+      <div id="leaderboardModal" class="modal hidden">
+        <div class="modalCard">
+          <div class="modalHeader">
+            <h3>Local Leaderboard</h3>
+            <button id="closeLeaderboard" class="iconBtn">✖</button>
+          </div>
+          <div id="leaderboardList" class="leaderList"></div>
+          <div class="modalFooter">
+            <button id="clearLeaderboard" class="secondary">Clear</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Settings modal -->
+      <div id="settingsModal" class="modal hidden">
+        <div class="modalCard">
+          <div class="modalHeader">
+            <h3>Settings</h3>
+            <button id="closeSettings" class="iconBtn">✖</button>
+          </div>
+          <div class="modalBody">
+            <label><input id="soundToggle" type="checkbox" checked> Sound effects</label>
+            <label><input id="vibrateToggle" type="checkbox"> Vibrate on wrong</label>
+            <label><input id="practiceToggle" type="checkbox"> Practice mode (no XP)</label>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <small>Black Force 007 · Cyber Theme · Made with ♥</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
